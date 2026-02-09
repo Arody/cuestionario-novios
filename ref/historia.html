@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nuestra Historia de Amor</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cf1773",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#211119",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for text area to keep it clean */
+        textarea::-webkit-scrollbar {
+            width: 4px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background: #cf1773;
+            border-radius: 2px;
+        }
+        .caret-primary {
+            caret-color: #cf1773;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-hidden selection:bg-primary selection:text-white">
+<!-- Background Image Layer with Heavy Overlay -->
+<div class="fixed inset-0 z-0">
+<div class="absolute inset-0 bg-cover bg-center grayscale opacity-40 mix-blend-overlay" data-alt="black and white photo of couple walking away in distance" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjsCh0q6sMY9etD4uE4_K65z73LZYIwlg4uR-fOEA2eNoXqtPjXMnDQDFCvtbBfmb46GBKDEzPblQf9yvKjx8KR0kIcxI2Xz595KWaDoiGkdlRrUT7rGZ_O9aCXX3upCFe6fm1VfsqPyIcplW2QPc5Jsqba8bCYtmtKnb0QWJrwvnLiizAWYF4VEUPWdk1s_PUEfc-QVRcBu8Wwb_4LwPnaj9ygBcM6H0cgez3wrc6cw0HEtFUR564GAhg5utLz_6Y8gFrgUncqpo');">
+</div>
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-background-dark/90 via-background-dark/80 to-background-dark/95"></div>
+</div>
+<!-- Main Content Container -->
+<div class="relative z-10 flex flex-col h-screen w-full max-w-md mx-auto px-6 py-8">
+<!-- Header / Progress -->
+<div class="flex justify-between items-start mb-8">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium tracking-widest text-primary/80 uppercase">Historia</span>
+<span class="text-3xl font-bold tracking-tighter text-white/20">01<span class="text-primary">/</span>05</span>
+</div>
+<button class="text-white/60 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<!-- Question Section -->
+<div class="flex-none mb-6">
+<h1 class="text-5xl md:text-6xl font-bold leading-[0.9] tracking-tight text-white drop-shadow-lg">
+                ¿Cómo <br/>
+<span class="text-primary">empezó</span> <br/>
+                todo?
+            </h1>
+</div>
+<!-- Input Area -->
+<div class="flex-1 flex flex-col relative min-h-0">
+<div class="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-primary/30"></div>
+<label class="sr-only" for="story-input">Cuéntanos tu historia</label>
+<textarea class="w-full h-full bg-transparent border-0 resize-none p-4 text-xl md:text-2xl font-light text-white/90 placeholder:text-white/20 focus:ring-0 focus:outline-none caret-primary leading-relaxed" id="story-input" placeholder="Cuéntanos el momento exacto... No omitas ningún detalle." spellcheck="false"></textarea>
+<div class="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-primary/30"></div>
+</div>
+<!-- Footer / Navigation -->
+<div class="flex-none pt-6 pb-2">
+<div class="flex items-center justify-between gap-4">
+<div class="text-xs text-white/40 font-mono">
+<span class="material-symbols-outlined align-middle text-sm mr-1">lock</span>
+                    Privado &amp; Seguro
+                </div>
+<button class="group flex items-center justify-center gap-3 bg-white text-background-dark hover:bg-primary hover:text-white transition-all duration-300 rounded px-8 py-4 font-bold tracking-wide text-lg">
+<span>Siguiente</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

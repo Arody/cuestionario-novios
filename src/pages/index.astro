@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { QuestionnaireFlow } from '../components/QuestionnaireFlow';
+---
+
+<Layout title="Cuestionario de Novios">
+	<main>
+		<QuestionnaireFlow client:only="react" />
+	</main>
+</Layout>

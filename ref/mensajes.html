@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mensajes y Detalles Finales</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cf1773",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#211119",
+                        "brutal-black": "#0a0a0a",
+                        "brutal-gray": "#333333",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for raw feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #211119;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cf1773;
+            border-radius: 0;
+        }
+        
+        /* Brutalist utility helper */
+        .text-outline {
+            -webkit-text-stroke: 1px #ffffff;
+            color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen text-[#1c1c1c] dark:text-[#f2f2f2] overflow-x-hidden antialiased">
+<div class="relative flex flex-col min-h-screen w-full max-w-md mx-auto border-x border-brutal-gray/20 dark:border-brutal-gray bg-white dark:bg-brutal-black shadow-2xl">
+<!-- Header Section -->
+<header class="flex flex-col pt-8 px-6 pb-4">
+<div class="flex justify-between items-center mb-8">
+<span class="text-xs uppercase tracking-[0.2em] font-bold text-primary dark:text-primary">Invitación 01</span>
+<span class="material-symbols-outlined text-2xl cursor-pointer hover:text-primary transition-colors">menu</span>
+</div>
+<h1 class="text-6xl font-bold leading-[0.85] tracking-tighter uppercase mb-4 text-black dark:text-white">
+                MENSAJES<br/>
+<span class="text-primary dark:text-primary">&amp;</span> DETALLES
+            </h1>
+<p class="text-sm font-light text-gray-600 dark:text-gray-400 max-w-[80%] leading-relaxed border-l-2 border-primary pl-4 mt-2">
+                ¿Algo que quieras decirnos antes del gran día? Este espacio es tuyo.
+            </p>
+</header>
+<!-- Visual Divider / Image -->
+<div class="w-full h-64 relative border-y-2 border-black dark:border-white my-4 grayscale hover:grayscale-0 transition-all duration-500 overflow-hidden group">
+<img alt="Close up black and white photo of intertwined fingers holding hands" class="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-700" data-alt="Close up black and white photo of intertwined fingers holding hands" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA97TBgSssR03TGnRlL3Uy2DIJXIYdCnFf9roEm1AhvS1DHDHqDuFRrIclqPEx0T6kXP5_9yncr0fpza-FJkU9e7ChSDxqcZQa9ZR-986W5XgnRr4BWztMVAGQVhjL0QG2lduIlN6tBilEMSyYrC8cBBVrU3gwYl9fJaN8Oe45kVyyuoGjkoCY3HZjAg2LYO8oLQ5sdWizl2cc5PKReQXtZyUD2uGawPL1QuJgnd4bS3Bt4XCZLe0iSxg_2B4lcze6b2ffW12aiDZQ"/>
+<div class="absolute bottom-2 right-4 bg-black/80 text-white text-[10px] px-2 py-1 uppercase tracking-widest font-bold border border-white/20 backdrop-blur-sm">
+                Forever
+            </div>
+</div>
+<!-- Form Section -->
+<main class="flex-1 flex flex-col gap-8 px-6 py-6">
+<!-- Message Input -->
+<div class="flex flex-col gap-2 group">
+<label class="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 group-focus-within:text-primary transition-colors" for="message">
+                    Tu Mensaje
+                </label>
+<div class="relative">
+<textarea class="w-full bg-transparent border-0 border-b-2 border-gray-300 dark:border-gray-700 focus:border-primary dark:focus:border-primary focus:ring-0 px-0 py-4 text-xl font-normal leading-relaxed placeholder:text-gray-400/50 resize-none min-h-[160px] rounded-none transition-all duration-300" id="message" placeholder="Escribe aquí tus deseos, canciones sugeridas o alergias..."></textarea>
+<div class="absolute bottom-4 right-0 pointer-events-none">
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-700 text-3xl">edit_note</span>
+</div>
+</div>
+</div>
+<!-- Dietary Toggle -->
+<div class="flex items-center justify-between border border-gray-200 dark:border-gray-800 p-4 rounded-sm hover:border-primary/50 transition-colors cursor-pointer group bg-gray-50 dark:bg-white/5">
+<div class="flex flex-col">
+<span class="font-bold uppercase tracking-wide text-sm">Restricciones Alimenticias</span>
+<span class="text-xs text-gray-500 dark:text-gray-400 font-light">Vegetariano / Vegano / Alergias</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</div>
+</div>
+<!-- Song Request -->
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400" for="song">
+                    Una canción que no puede faltar
+                </label>
+<div class="flex items-center border-b border-gray-300 dark:border-gray-700 pb-2 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-gray-400 mr-3">music_note</span>
+<input class="w-full bg-transparent border-none p-0 text-base focus:ring-0 placeholder:text-gray-400/50 placeholder:font-light" id="song" placeholder="Artista - Título" type="text"/>
+</div>
+</div>
+</main>
+<!-- Footer / Action Area -->
+<div class="sticky bottom-0 left-0 w-full bg-white/90 dark:bg-brutal-black/90 backdrop-blur-md p-6 border-t border-gray-100 dark:border-gray-800 z-10">
+<button class="w-full group relative overflow-hidden bg-transparent hover:bg-primary text-black dark:text-white hover:text-white border-2 border-black dark:border-white hover:border-primary transition-all duration-300 py-5 px-6 rounded-sm">
+<div class="absolute inset-0 w-full h-full bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<span class="text-lg font-bold tracking-[0.2em] uppercase">Confirmar Asistencia</span>
+<span class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</button>
+<p class="text-center text-[10px] uppercase tracking-widest text-gray-400 dark:text-gray-600 mt-4 font-bold">
+                Gracias por ser parte de nuestra historia
+            </p>
+</div>
+</div>
+</body></html>

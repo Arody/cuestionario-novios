@@ -1,0 +1,17 @@
+[
+  {
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin"
+  },
+  {
+    "username": "boda2026",
+    "password": "amor",
+    "role": "user"
+  },
+  {
+    "username": "Sam&Dany",
+    "password": "bodaOctubre",
+    "role": "user"
+  }
+]

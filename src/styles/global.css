@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #cf1773;
+  --color-background-light: #f8f6f7;
+  --color-background-dark: #211119;
+  --color-surface-dark: #1a0d13;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Noto Serif Display", serif;
+  
+  --text-display-huge: 4.5rem;
+  --text-display-huge--line-height: 0.9;
+  --text-display-huge--letter-spacing: -0.04em;
+}
+
+@layer utilities {
+  .text-stroke-1 {
+    -webkit-text-stroke: 1px;
+  }
+  .text-stroke-black {
+    -webkit-text-stroke-color: #000;
+  }
+  .text-stroke-white {
+    -webkit-text-stroke-color: #fff;
+  }
+  
+  .writing-vertical-rl {
+    writing-mode: vertical-rl;
+  }
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-display);
+  background-color: var(--color-background-light);
+  color: #0f172a; /* slate-900 */
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-background-dark);
+    color: #ffffff;
+  }
+}
+
+/* Elegant Animated Background */
+.animated-bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: linear-gradient(
+        135deg,
+        var(--color-background-light) 0%,
+        #fdf2f6 25%,
+        #fff5f8 50%,
+        #fdf2f6 75%,
+        var(--color-background-light) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@media (prefers-color-scheme: dark) {
+    .animated-bg {
+        background: linear-gradient(
+            135deg,
+            var(--color-background-dark) 0%,
+            #2d1520 25%,
+            #251118 50%,
+            #2d1520 75%,
+            var(--color-background-dark) 100%
+        );
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+    }
+}
+
+/* Subtle floating orbs for depth */
+.floating-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-orb-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--color-primary);
+    top: -100px;
+    right: -100px;
+    animation: float1 20s ease-in-out infinite;
+}
+
+.floating-orb-2 {
+    width: 300px;
+    height: 300px;
+    background: #e879a9;
+    bottom: -50px;
+    left: -50px;
+    animation: float2 25s ease-in-out infinite;
+}
+
+.floating-orb-3 {
+    width: 200px;
+    height: 200px;
+    background: #d4a574;
+    top: 50%;
+    left: 30%;
+    animation: float3 18s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-30px, 50px) scale(1.1); }
+    66% { transform: translate(20px, -30px) scale(0.95); }
+}
+
+@keyframes float2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40px, -40px) scale(1.15); }
+}
+
+@keyframes float3 {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.1; }
+    50% { transform: translate(-50px, 30px) scale(1.2); opacity: 0.2; }
+}
+
+/* Elegant Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(207, 23, 115, 0.3);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(207, 23, 115, 0.6);
+}
+
+/* Hide scrollbar by default, show on hover */
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.overflow-y-auto:hover {
+  scrollbar-color: rgba(207, 23, 115, 0.3) transparent;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(207, 23, 115, 0.2) transparent;
+}

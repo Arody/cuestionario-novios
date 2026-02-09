@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fecha y Lugar - Nuestra Boda</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cf1773",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#211119",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Brutalist utility for extra thick borders/focus states */
+        .brutalist-border {
+            border-width: 2px;
+        }
+        .brutalist-input:focus {
+            box-shadow: 4px 4px 0px 0px #cf1773;
+            border-color: #cf1773;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between p-4 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b-2 border-primary/10">
+<button class="flex items-center justify-center size-10 text-gray-900 dark:text-white hover:bg-black/5 dark:hover:bg-white/10 rounded transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h2 class="text-sm font-bold tracking-[0.2em] uppercase text-gray-500 dark:text-gray-400">Paso 03</h2>
+<button class="flex items-center justify-center size-10 text-primary">
+<span class="material-symbols-outlined text-2xl">help</span>
+</button>
+</header>
+<main class="flex-1 flex flex-col px-6 pt-8 pb-12 w-full max-w-md mx-auto">
+<!-- Hero Section: Brutalist Typography -->
+<div class="mb-10 relative">
+<div class="absolute -left-4 top-2 w-1 h-full bg-primary"></div>
+<h1 class="text-6xl font-bold leading-[0.85] tracking-tight text-gray-900 dark:text-white mb-2">
+                LA<br/>FECHA<br/><span class="text-primary">&amp;</span> LUGAR
+            </h1>
+<p class="mt-6 text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">
+                Por favor, indícanos dónde y cuándo nos acompañarás para celebrar este momento.
+            </p>
+</div>
+<!-- Image Section: Brutalist Card -->
+<div class="mb-10 group relative">
+<!-- Decorative Offset Border -->
+<div class="absolute inset-0 translate-x-2 translate-y-2 border-2 border-gray-900 dark:border-white opacity-20 dark:opacity-10 rounded-lg pointer-events-none"></div>
+<div class="relative overflow-hidden rounded-lg aspect-[4/3] border-2 border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-[#2a1a21]">
+<!-- Image Overlay for contrast -->
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent z-10"></div>
+<!-- Main Image -->
+<div class="w-full h-full bg-cover bg-center grayscale contrast-125 mix-blend-multiply dark:mix-blend-normal opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="Black and white artistic photo of romantic architectural archways and stairs" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYi1BF1uZk8YTSv3NvKqeTjnDJjT8PzpyBuPxxm7-MJpF8C_GkbkdRYZd3-Ic3tCbJeggg0-UQ8Ghdj_W77Pj46Tsc7CijWujxhaGtId3LgRrh7SQSFrZuvn2bi7xRrDos5xlhQ2xfHCncosdPLr-6kHxi_rN0nqy7Zjyj8wCk_4wIMuazX3F_C1_XdzrSU86b3NJnPI9qQTLy0q-LhF8nVDLYnVOu9PLCb-DzYY0a2JP3ThlkazOLHRaQZ9pKzN_jdK3A9kAERs8');">
+</div>
+<!-- Floating Label -->
+<div class="absolute bottom-4 left-4 z-20 bg-primary/90 backdrop-blur px-3 py-1 rounded">
+<span class="text-xs font-bold text-white uppercase tracking-wider">El Recuerdo</span>
+</div>
+</div>
+</div>
+<!-- Form Section -->
+<form class="space-y-8">
+<!-- Date Input -->
+<div class="relative group">
+<label class="block text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2" for="date">
+                    Fecha del Evento
+                </label>
+<div class="relative flex items-center">
+<input class="brutalist-input w-full bg-transparent border-2 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-xl font-bold py-4 px-4 pr-12 rounded-lg placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none transition-all duration-200" id="date" placeholder="DD / MM / AAAA" type="text"/>
+<span class="material-symbols-outlined absolute right-4 text-primary pointer-events-none">calendar_today</span>
+</div>
+</div>
+<!-- Location Input -->
+<div class="relative group">
+<label class="block text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2" for="location">
+                    Ubicación
+                </label>
+<div class="relative flex items-center">
+<input class="brutalist-input w-full bg-transparent border-2 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-xl font-bold py-4 px-4 pr-12 rounded-lg placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none transition-all duration-200" id="location" placeholder="Ciudad, País" type="text"/>
+<span class="material-symbols-outlined absolute right-4 text-primary pointer-events-none">location_on</span>
+</div>
+</div>
+<!-- Notes / Details (Optional) -->
+<div class="relative group">
+<label class="block text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2" for="notes">
+                    Notas Adicionales
+                </label>
+<textarea class="brutalist-input w-full bg-transparent border-2 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-base font-normal py-3 px-4 rounded-lg placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none resize-none transition-all duration-200" id="notes" placeholder="¿Algún detalle especial?" rows="3"></textarea>
+</div>
+</form>
+</main>
+<!-- Footer / CTA -->
+<div class="sticky bottom-0 w-full p-4 bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800">
+<div class="max-w-md mx-auto flex gap-4">
+<button class="flex-1 bg-primary text-white text-lg font-bold py-4 rounded-lg uppercase tracking-wider hover:bg-primary/90 active:scale-[0.98] transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                Confirmar
+            </button>
+</div>
+</div>
+</body></html>
