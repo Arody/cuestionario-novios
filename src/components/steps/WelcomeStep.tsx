@@ -21,7 +21,7 @@ export const WelcomeStep: React.FC<WelcomeStepProps> = ({ onNext }) => {
             <span className="block">Nues</span>
             <span className="block ml-12 italic font-serif text-primary">tra</span>
             <span className="block -mt-2">Histo</span>
-            <span className="block text-right text-transparent text-stroke-1 dark:text-stroke-white text-stroke-black opacity-30">ria</span>
+            <span className="block text-right text-transparent text-stroke-1 text-stroke-black dark:text-stroke-white opacity-50">ria</span>
           </motion.h1>
           
           {/* Image with Brutalist crop */}

@@ -212,7 +212,7 @@ export const QuestionnaireFlow = () => {
 
   if (!currentUser) {
     return (
-        <div className="relative w-full h-screen overflow-hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-white">
+      <div className="relative w-full h-screen-safe overflow-y-auto overflow-x-hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-white">
              {/* Pass modified handler that expects role */}
              <LoginStep onLogin={(user, role) => handleLogin(user, role as any)} />
         </div>
@@ -235,7 +235,7 @@ export const QuestionnaireFlow = () => {
   // Show introduction flow
   if (showIntro) {
       return (
-        <div className="relative w-full h-screen overflow-hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-white">
+        <div className="relative w-full h-screen-safe overflow-y-auto overflow-x-hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-white">
           {/* Audio element at top level so it persists */}
           <audio ref={audioRef} src="/studio.mp3" loop preload="auto" />
           <IntroductionStep onComplete={handleCompleteIntro} audioRef={audioRef} />
@@ -244,7 +244,7 @@ export const QuestionnaireFlow = () => {
   }
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-white flex flex-col items-center justify-center">
+    <div className="relative w-full h-screen-safe overflow-y-auto overflow-x-hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-white flex flex-col items-center justify-start pt-safe">
       {/* Audio element persists through all questionnaire steps */}
       <audio ref={audioRef} src="/studio.mp3" loop preload="auto" />
       

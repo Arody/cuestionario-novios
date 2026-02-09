@@ -28,6 +28,40 @@
   .writing-vertical-rl {
     writing-mode: vertical-rl;
   }
+
+  /* Mobile-safe viewport height using dynamic viewport units */
+  .h-screen-safe {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .min-h-screen-safe {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  /* Safe area padding for mobile browser bars */
+  .pt-safe {
+    padding-top: max(env(safe-area-inset-top), 1rem);
+  }
+
+  .pb-safe {
+    padding-bottom: max(env(safe-area-inset-bottom), 1rem);
+  }
+
+  /* Text shadow for better visibility on any background */
+  .text-shadow-soft {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .dark\:text-stroke-white {
+      -webkit-text-stroke-color: #fff;
+    }
+    .text-shadow-soft {
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    }
+  }
 }
 
 /* Base styles */
