@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LoginStep } from './steps/LoginStep';
 import { IntroductionStep } from './steps/IntroductionStep';
@@ -124,6 +124,12 @@ export const QuestionnaireFlow = () => {
   const [showSaveToast, setShowSaveToast] = useState(false);
   
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const dataRef = useRef<QuestionnaireData>(data);
+  const currentUserRef = useRef<string | null>(null);
+
+  // Keep refs in sync with state
+  useEffect(() => { dataRef.current = data; }, [data]);
+  useEffect(() => { currentUserRef.current = currentUser; }, [currentUser]);
 
   const currentStep = STEPS[currentStepIndex];
 
@@ -141,20 +147,39 @@ export const QuestionnaireFlow = () => {
     }
   }, [currentUser, userRole]);
 
-  const saveData = async (newData: QuestionnaireData) => {
-    if (!currentUser) return;
+  const saveData = useCallback(async (newData: QuestionnaireData) => {
+    const user = currentUserRef.current;
+    if (!user) return;
     setIsSaving(true);
     try {
         await fetch('/api/save', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username: currentUser, data: newData })
+          body: JSON.stringify({ username: user, data: newData })
         });
     } catch (error) {
         console.error("Error saving data:", error);
     } finally {
         setIsSaving(false);
     }
+  }, []);
+
+  // Auto-save every 60 seconds
+  useEffect(() => {
+    if (!currentUser || userRole === 'admin' || showIntro || isCompleted) return;
+    const interval = setInterval(() => {
+      const currentData = dataRef.current;
+      if (currentData && Object.keys(currentData).length > 0) {
+        saveData(currentData);
+      }
+    }, 60000);
+    return () => clearInterval(interval);
+  }, [currentUser, userRole, showIntro, isCompleted, saveData]);
+
+  // Manual save handler (for the save button)
+  const handleManualSave = async () => {
+    await saveData(data);
+    setShowSaveToast(true);
   };
 
   const handleNext = async (stepData?: any) => {
@@ -249,16 +274,28 @@ export const QuestionnaireFlow = () => {
       <audio ref={audioRef} src="/studio.mp3" loop preload="auto" />
       
       {/* Header / Progress */}
-      <header className="absolute top-0 left-0 w-full z-20 flex items-center justify-between p-6 max-w-md mx-auto right-0">
+      <header className="absolute top-0 left-0 w-full z-20 flex items-center justify-between p-4 px-5 max-w-md mx-auto right-0">
         {currentStepIndex > 0 && (
           <button onClick={handleBack} className="flex items-center justify-center text-slate-900 dark:text-white hover:text-primary transition-colors">
             <span className="material-symbols-outlined !text-[28px]">arrow_back</span>
           </button>
         )}
-        <div className="flex-1"></div>
+        <div className="flex-1 flex justify-center">
+          {/* Save button - only show on form steps (not Welcome) */}
+          {currentStepIndex > 0 && (
+            <button
+              onClick={handleManualSave}
+              disabled={isSaving}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest border border-slate-300 dark:border-white/20 hover:border-primary hover:text-primary transition-all duration-200 disabled:opacity-50 bg-white/50 dark:bg-white/5 backdrop-blur-sm"
+            >
+              <span className="material-symbols-outlined !text-[14px]">{isSaving ? 'sync' : 'save'}</span>
+              {isSaving ? 'Guardando...' : 'Guardar'}
+            </button>
+          )}
+        </div>
         <div className="flex flex-col items-end">
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary">
-                {currentUser} {isSaving && <span className="animate-pulse">...</span>}
+            {currentUser}
             </span>
             <div className="flex items-center gap-2 mt-1">
                 <span className="text-xs font-mono opacity-40">STEP</span>
